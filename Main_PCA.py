@@ -48,13 +48,7 @@ def Load_Data():
 
         img = array_01[i]
         img = img / 255
-        people_female.append(trasform(10, img))
-        # people_female.append(trasform(20, img))
-        # people_female.append(trasform(50, img))
-        # people_female.append(trasform(100, img))
-        # people_female.append(trasform(200, img))
-        # people_female.append(trasform(500, img))
-        # people_female.append(trasform(1000, img))
+        people_female.append(trasform(30, img))
 
         plot(people_female[i], img) #Plot male image and male image PCA
 
@@ -72,13 +66,7 @@ def Load_Data():
 
         img = array_02[i]
         img = img / 255
-        people_male.append(trasform(10, img))
-        # people_male.append(trasform(20, img))
-        # people_male.append(trasform(50, img))
-        # people_male.append(trasform(100, img))
-        # people_male.append(trasform(200, img))
-        # people_male.append(trasform(500, img))
-        # people_male.append(trasform(1000, img))
+        people_male.append(trasform(30, img))
 
         plot(people_male[i], img) #Plot male image and male image PCA
 
@@ -151,8 +139,7 @@ loss_per_fold = []
 
 for train, test in kfold.split(inputs, targets):
     model = Sequential()
-    model.add(Conv2D(32, 3, activation='relu', padding='same',
-                     input_shape=(48, 60, 1)))  # add my input_shape # Neural number = 32
+    model.add(Conv2D(32, 3, activation='relu', padding='same', input_shape=(48, 60, 1)))  
     model.add(Conv2D(64, 3, activation='relu', padding='same'))
 
     model.add(MaxPooling2D(2, 2))
